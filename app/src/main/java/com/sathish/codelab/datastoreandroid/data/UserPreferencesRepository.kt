@@ -30,16 +30,16 @@ class UserPreferencesRepository private constructor(context: Context) {
         context.applicationContext.getSharedPreferences(USER_PREFERENCES_NAME, Context.MODE_PRIVATE)
 
     // Keep the sort order as a stream of changes
-    private val _sortOrderFlow = MutableStateFlow(sortOrder)
-    val sortOrderFlow: StateFlow<UserPreferences> = _sortOrderFlow
+    private val _userPreferenceFlow = MutableStateFlow(userPreferences)
+    val userPreferenceFlow: StateFlow<UserPreferences> = _userPreferenceFlow
 
     /**
      * Get the current sort order. By default, the sort order is None.
      */
-    val currentSortOrder: UserPreferences
-        get() = sortOrder
+    val currentUserPreferences: UserPreferences
+        get() = userPreferences
 
-    private val sortOrder: UserPreferences
+    private val userPreferences: UserPreferences
         get() {
             val order = sharedPreferences.getString(SORT_ORDER_KEY, SortOrder.ASC.name)
             val sortBy = sharedPreferences.getString(SORT_BY_KEY, SortBy.API.name)
