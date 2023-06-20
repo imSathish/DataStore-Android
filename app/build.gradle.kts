@@ -24,6 +24,7 @@ android {
         release {
             isMinifyEnabled = false
             proguardFiles(
+                @Suppress("UnstableApiUsage")
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
@@ -36,6 +37,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    @Suppress("UnstableApiUsage")
     buildFeatures {
         compose = true
     }
