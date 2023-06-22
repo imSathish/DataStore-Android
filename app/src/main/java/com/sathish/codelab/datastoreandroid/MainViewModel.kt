@@ -15,7 +15,7 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.stateIn
 
 class MainViewModel internal constructor(
-    apiRepository: ApiRepository, private val userPreferencesRepository: UserPreferencesRepository
+    apiRepository: ApiRepository, userPreferencesRepository: UserPreferencesRepository
 ) : ViewModel() {
 
     val androidApiUiModelFlow = combine(
